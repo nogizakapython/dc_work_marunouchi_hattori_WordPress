@@ -2,8 +2,8 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.js"></script>
+<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/common.js"></script>
 <script type="text/javascript">
 $(function() {
     $('#slide').slideshow({
@@ -17,21 +17,28 @@ $(function() {
     });
 });
 </script>
-<title>SAMPLE SITE</title>
- <link rel="stylesheet" href="style.css">
+<?php if ( is_home() || is_front_page() ) : ?>
+    <title><?php bloginfo('name'); ?></title>
+<?php else : ?>
+    <title><?php bloginfo('name'); ?> | <?php wp_title(); ?></title>
+<?php endif; ?>
+<link href="<?php echo get_stylesheet_directory_uri(); ?>/style.css" rel="stylesheet">
+
+<?php wp_head(); ?>
 </head>
 <body>
     <header>
         <div class="container">
-            <h1><a href="index.html"><img src="images/logo.png" alt="SAMPLE WEB SITE" /></a></h1>
+            <h1><a href="<?php echo home_url(); ?>/"><img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="SAMPLE WEB SITE" /></a></h1>
             <div id="menu">
                 <ul>
                     <li class="home"><a href="<?php echo home_url(); ?>/">TOP</a></li>
-                    <li><a href="<?php echo home_url(); ?>/company/">会社概要</a></li>
-                    <li><a href="<?php echo home_url(); ?>/service/">サービス概要</a></li>
-                    <li><a href="<?php echo home_url(); ?>/archive-news/">プレスリリース</a></li>
-                    <li><a href="<?php echo home_url(); ?>/archive-news/">ブログ</a></li>
-                    <li><a href="<?php echo home_url(); ?>/contact/">お問い合わせ</a></li>
+                    <?php wp_nav_menu( array(
+                        'theme_location'=>'place_global',
+                        'container' =>'',
+                        'menu_class' =>'',
+                        'items_wrap' => '%3$s',//<ul>を出力しない
+                    ));?>
                 </ul>
             </div>
         </div>

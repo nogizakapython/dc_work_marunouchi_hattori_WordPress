@@ -1,4 +1,4 @@
-
+<?php get_header(); ?>
     <div id="cont_first" class="container">
         <div id="contents">
             <div id="cont_left">
@@ -48,10 +48,10 @@
                     </dl>
                 </div>
             </div>
-           
+
         </div>
     </div>
-    
+
     <div id="pageTop">
         <a href="#">PAGE TOP</a>
     </div>

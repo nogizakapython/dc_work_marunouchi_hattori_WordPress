@@ -1,3 +1,4 @@
+
 <footer>
         <ul>
             <li class="home"><a href="<?php echo home_url(); ?>/">TOP</a></li>
@@ -8,4 +9,10 @@
         <div id="footer">
             <div class="copyright">Copyright &copy; 2020 SAMPLE SITE All Rights Reserved.</div>
         </div>
-    </footer>
+</footer>
+<div id="pageTop">
+        <a href="#">PAGE TOP</a>
+</div>
+<?php wp_footer(); ?>
+</body>
+</html>

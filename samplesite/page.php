@@ -1,3 +1,4 @@
+<?php get_header(); ?>
     <div id="cont_first" class="container">
         <div id="contents">
             <div id="cont_left">
@@ -10,10 +11,10 @@
 			<div class="service_img"><img src="images/service02.jpeg"></div>
 			<a href="contact.html"><button class="btn1">お問い合わせ</button></a>
 	        </div>
-            
+
         </div>
     </div>
-    
+
     <div id="pageTop">
         <a href="#">PAGE TOP</a>
     </div>
